@@ -23,7 +23,7 @@ def predict_price(area) -> float:
     df['price']=pd.to_numeric(df['price'],downcast='float')
     X=df['area'].values
     Y=df['price'].values
-    z=numpy.polyfit(X,Y,3)
+    z=numpy.polyfit(X,Y,1)
     p=numpy.poly1d(z)
     predictions=p(area)
     return predictions
